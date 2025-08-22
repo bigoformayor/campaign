@@ -134,12 +134,7 @@
   function init(){
     $('#year').textContent = new Date().getFullYear();
 
-    const savedTheme = localStorage.getItem('gp_theme');
-    if(savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
-    $('#themeToggle').addEventListener('click', () => {
-      const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', cur);
-      localStorage.setItem('gp_theme', cur);
+    
       // Mobile menu toggle
   const nav = document.getElementById('mainNav');
   const navToggle = document.getElementById('navToggle');
