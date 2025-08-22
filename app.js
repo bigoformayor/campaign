@@ -140,6 +140,26 @@
       const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', cur);
       localStorage.setItem('gp_theme', cur);
+      // Mobile menu toggle
+  const nav = document.getElementById('mainNav');
+  const navToggle = document.getElementById('navToggle');
+  if (nav && navToggle) {
+    navToggle.addEventListener('click', () => {
+      const open = nav.getAttribute('data-open') === 'true';
+      nav.setAttribute('data-open', String(!open));
+      navToggle.setAttribute('aria-expanded', String(!open));
+    });
+
+    // Close the menu after clicking a link on mobile
+    Array.from(nav.querySelectorAll('a')).forEach(a => {
+      a.addEventListener('click', () => {
+        if (window.matchMedia('(max-width: 720px)').matches) {
+          nav.setAttribute('data-open', 'false');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
     });
 
     applyI18n();
