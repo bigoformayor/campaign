@@ -94,5 +94,26 @@ body {
 .footer-socials { display:flex; gap:.5rem; }
 .muted { color: var(--muted); }
 
+/* Icon buttons for social links */
+.socials { display: flex; gap: .35rem; }
+.footer-socials { display: flex; gap: .5rem; }
+
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-decoration: none;
+  border: none;
+  transition: transform .12s ease, filter .12s ease;
+}
+.social svg { width: 20px; height: 20px; }
+.social.fb { background: #1877f2; color: #fff; }
+.social.tk { background: #000; color: #fff; }
+.social:hover, .social:focus { transform: translateY(-1px); filter: brightness(1.05); outline: 2px solid color-mix(in srgb, var(--navy), transparent 70%); outline-offset: 2px; }
+
+
 .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
 .skip-link:focus { position: static; width: auto; height: auto; background: var(--navy); color: var(--offwhite); padding: .5rem; }
