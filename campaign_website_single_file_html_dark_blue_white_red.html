@@ -206,7 +206,11 @@
         <div class="card">
           <h3 data-editable data-i18n="contact_form_title" contenteditable="false">Volunteer or Send a Message</h3>
           <p class="muted" data-i18n="contact_intro">We read every note. Share how you’d like to help or what we should know about your block.</p>
-          <form id="contact-form" novalidate>
+          <form id="contact-form" action="https://formspree.io/f/mwpqgqlr" method="POST" accept-charset="utf-8" novalidate>
+            <!-- honeypot & metadata -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="New message from campaign site">
+            <input type="hidden" name="site_language" id="site_language" value="en">
             <div class="row">
               <div>
                 <label for="name" data-i18n="label_name">Full Name</label>
@@ -540,8 +544,33 @@
       // Contact form behavior
       const ta = document.getElementById('userMessage');
       ta.addEventListener('input', ()=>{ charCount.textContent = ta.value.length; });
-      form.addEventListener('submit', (e)=>{
+      form.addEventListener('submit', async (e)=>{
         e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        const emailValid = /.+@.+\..+/.test(data.email || '');
+        if(!data.name){ return inform(t('msg_need_name')); }
+        if(!emailValid){ return inform(t('msg_need_email')); }
+        // record current UI language
+        const docLang = document.documentElement.getAttribute('lang') || 'en';
+        const langHidden = document.getElementById('site_language');
+        if (langHidden) langHidden.value = docLang;
+        try{
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(form)
+          });
+          if(res.ok){
+            inform(t('msg_thanks'));
+            form.reset();
+            if (charCount) charCount.textContent = '0';
+          } else {
+            inform('There was a problem sending your message. Please try again.');
+          }
+        } catch(err){
+          inform('Network error. Please try again.');
+        }
+      });
         const data = Object.fromEntries(new FormData(form).entries());
         const emailValid = /.+@.+\..+/.test(data.email || '');
         if(!data.name){ return inform(t('msg_need_name')); }
