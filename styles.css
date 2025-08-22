@@ -1,21 +1,25 @@
 :root {
-  --pink: #C81E5A;        /* darker, richer */
-  --pink-600: #A31645;     /* deeper accent */
-  --navy: #0b2545;
+  --pink: #C81E5A;        /* your vibrant pink */
+  --pink-600: #A31645;
+
+  --navy: #0b2545;        /* deep navy anchor */
+  --ink: #1d3557;         /* lighter navy for all main text */
+  --muted: #3d5a80;       /* softer accent navy for subtitles, borders */
+
   --offwhite: #f9f9f7;
-  --ink: #10212b;
-  --muted: #5b6b76;
   --card: #ffffff;
   --bg: #fff4f7;
 }
 
+
 :root[data-theme="dark"] {
   --bg: #0e1113;
   --card: #14181b;
-  --ink: #e7eaee;
-  --offwhite: #fffaf6;
-  --muted: #96a2ac;
+  --ink: #a8c0dd;      /* light navy tint instead of gray */
+  --offwhite: #eaf1f9;
+  --muted: #7a93b5;    /* softer navy accent in dark mode */
 }
+
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
