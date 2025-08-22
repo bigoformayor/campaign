@@ -1,0 +1,57 @@
+{
+  "about": {
+    "en": "**Galena Park 1st** is about putting families at the heart of our community. We want Galena Park to be the kind of place where parents feel supported, kids have safe spaces to grow, and seniors are respected. Our focus is on building clean parks, reliable services, and open communication between neighbors and city leadership.\n\nThis site is where we share updates, highlight progress, and invite everyone to take part in shaping a better home for our families.",
+    "es": "**Galena Park 1st** se trata de poner a las familias en el centro de nuestra comunidad. Queremos que Galena Park sea un lugar donde los padres se sientan apoyados, los niños tengan espacios seguros para crecer y los adultos mayores sean respetados. Nos enfocamos en parques limpios, servicios confiables y comunicación abierta entre vecinos y líderes de la ciudad.\n\nAquí compartimos avances, noticias y formas de participar para hacer de nuestra ciudad un mejor hogar para nuestras familias."
+  },
+  "drivers": {
+    "en": [
+      "Clean and safe public spaces that families actually use",
+      "Simple city services with clear response times",
+      "Transparency for budgets, contracts, and staffing",
+      "Youth programs that build skills, not just busywork",
+      "Respectful code enforcement with consistent rules"
+    ],
+    "es": [
+      "Espacios públicos limpios y seguros que las familias sí usan",
+      "Servicios municipales simples con tiempos de respuesta claros",
+      "Transparencia en presupuestos, contratos y personal",
+      "Programas para jóvenes que formen habilidades, no solo tareas",
+      "Aplicación del código con respeto y reglas consistentes"
+    ]
+  },
+  "posts": [
+    {
+      "id": "cleanup-day",
+      "type": "event",
+      "date": "2025-09-07",
+      "tags": ["parks", "volunteer"],
+      "title": { "en": "Community cleanup day at Shafai Park", "es": "Jornada de limpieza en Shafai Park" },
+      "body": {
+        "en": "Bring gloves and water. We will provide bags and pickers. Meet at the pavilion at 9:00 AM.",
+        "es": "Trae guantes y agua. Nosotros llevamos bolsas y pinzas. Nos vemos en el pabellón a las 9:00 a. m."
+      }
+    },
+    {
+      "id": "hydrant-mapping",
+      "type": "news",
+      "date": "2025-08-20",
+      "tags": ["public safety"],
+      "title": { "en": "Hydrant mapping project opens to volunteers", "es": "Proyecto de mapeo de hidrantes abierto a voluntarios" },
+      "body": {
+        "en": "We are cataloging hydrant locations and condition ratings. Volunteers can adopt a block and submit photos.",
+        "es": "Estamos catalogando ubicaciones de hidrantes y su estado. Los voluntarios pueden adoptar una cuadra y enviar fotos."
+      }
+    },
+    {
+      "id": "playground-survey",
+      "type": "news",
+      "date": "2025-08-15",
+      "tags": ["parks"],
+      "title": { "en": "Playground survey results posted", "es": "Resultados de la encuesta de parques infantiles" },
+      "body": {
+        "en": "Top requests: shade, water fountains, and benches. Full breakdown will post this week.",
+        "es": "Solicitudes principales: sombra, bebederos y bancas. El desglose completo se publicará esta semana."
+      }
+    }
+  ]
+}
