@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oscar Mireles for Mayor – Galena Park 1st</title>
+  <meta name="description" content="Official campaign site for Oscar Mireles for Mayor of Galena Park. Read the message, see the issues, and get in touch." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0B1A3C;           /* deep navy */
+      --bg-2:#0f224d;         /* slightly lighter navy */
+      --text:#ffffff;         /* white */
+      --muted:#C3CEE4;        /* soft steel */
+      --accent:#E31D3B;       /* confident red */
+      --accent-2:#E31D3B22;   /* red tint */
+      --line:#23345F;         /* divider */
+      --card:#101F45;         /* card bg */
+      --success:#2bb673;
+      --warning:#f5a524;
+      --focus:#7aa2ff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg, var(--bg), var(--bg-2));
+      color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.6; letter-spacing:.2px;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; display:block}
+
+    /* Header / Nav */
+    .topbar{position:sticky; top:0; z-index:1000; backdrop-filter:saturate(1.2) blur(8px);
+      background:rgba(11,26,60,0.9); border-bottom:1px solid var(--line)}
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:70px}
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{
+      width:44px; height:44px; border-radius:10px; background:conic-gradient(from 180deg, var(--accent), var(--accent) 25%, #fff 25%, #fff 50%, #25408F 50%, #25408F 75%, var(--accent) 75%);
+      box-shadow: var(--shadow);
+    }
+    .brand h1{font-family:Merriweather, serif; font-weight:900; font-size:1.25rem; margin:0; letter-spacing:.5px}
+    .brand small{display:block; margin-top:-2px; color:var(--muted); font-weight:600; font-size:.72rem; letter-spacing:1.5px}
+
+    .menu{display:flex; align-items:center; gap:2px}
+    .menu a{padding:10px 14px; border-radius:10px; font-weight:600; color:var(--muted)}
+    .menu a[aria-current="page"], .menu a:hover{color:var(--text); background:var(--accent-2)}
+    .menu .cta{margin-left:8px; background:var(--accent); color:white}
+
+    .lang-toggle{margin-left:8px}
+
+    .hamburger{display:none; width:42px; height:42px; border:1px solid var(--line); border-radius:12px; align-items:center; justify-content:center; background:#0b1a3c; cursor:pointer}
+    .hamburger span{display:block; width:18px; height:2px; background:white; position:relative}
+    .hamburger span::before,.hamburger span::after{content:""; position:absolute; left:0; width:18px; height:2px; background:white}
+    .hamburger span::before{top:-6px}
+    .hamburger span::after{top:6px}
+
+    /* Hero */
+    .hero{padding:64px 0 36px; border-bottom:1px solid var(--line)}
+    .eyebrow{color:var(--muted); font-weight:700; letter-spacing:1.6px; text-transform:uppercase; font-size:.8rem}
+    .hero h2{font-family:Merriweather, serif; font-weight:900; font-size:clamp(1.8rem, 5vw, 3rem); line-height:1.2; margin:.35em 0}
+    .hero p{max-width:60ch; color:#e7ecfb}
+
+    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 16px; border-radius:14px; font-weight:700; border:1px solid var(--line); background:#0d1f46; color:white; cursor:pointer}
+    .btn.primary{background:var(--accent); border-color:transparent}
+    .btn.secondary{background:#0f244f}
+    .btn:focus-visible{outline:3px solid var(--focus); outline-offset:2px}
+
+    /* Sections */
+    section{padding:40px 0}
+
+    /* Cards */
+    .grid{display:grid; gap:20px}
+    .grid-3{grid-template-columns:repeat(3, 1fr)}
+    .grid-2{grid-template-columns:repeat(2, 1fr)}
+    @media (max-width:920px){.grid-3,.grid-2{grid-template-columns:1fr}}
+
+    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px; font-family:Merriweather, serif; font-weight:800}
+    .muted{color:var(--muted)}
+    .divider{height:1px; background:var(--line); margin:18px 0}
+
+    /* Forms */
+    form{display:grid; gap:14px}
+    label{font-weight:700}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+    @media (max-width:700px){.row{grid-template-columns:1fr}}
+    input, textarea, select{
+      width:100%; padding:12px 14px; border-radius:12px; border:1px solid #2a3a6d; background:#0a1a3f; color:white; font:inherit
+    }
+    input::placeholder, textarea::placeholder{color:#99a7cb}
+    textarea{min-height:140px; resize:vertical}
+    .note{font-size:.9rem; color:var(--muted)}
+
+    /* Footer */
+    footer{border-top:1px solid var(--line); padding:24px 0 60px; color:var(--muted)}
+    .fineprint{font-size:.8rem}
+
+    /* Edit mode styles */
+    [data-editable]{transition: box-shadow .2s, background .2s, border-color .2s}
+    .edit-on [data-editable]{outline:none; box-shadow:0 0 0 2px #ffffff22 inset; background:#0c1e45}
+    .edit-toolbar{position:fixed; right:18px; bottom:18px; z-index:9999; display:flex; flex-direction:column; gap:10px}
+    .edit-toolbar .btn{box-shadow:var(--shadow)}
+    .pill{display:inline-block; padding:4px 10px; border-radius:999px; background:var(--accent-2); color:#fff; font-weight:700; font-size:.75rem; letter-spacing:.6px}
+
+    /* Flags motif */
+    .flag{
+      position:relative; padding:18px; border-radius:14px; overflow:hidden; border:1px solid var(--line);
+      background:linear-gradient(135deg, rgba(255,255,255,.04), rgba(255,255,255,0) 60%);
+    }
+    .flag::after{
+      content:""; position:absolute; inset:auto -20% -20% auto; width:220px; height:220px; transform:rotate(22deg);
+      background: repeating-linear-gradient(0deg, #fff 0 12px, var(--accent) 12px 24px, #25408F 24px 36px);
+      opacity:.08; filter:blur(1px);
+    }
+
+    /* Utilities */
+    .center{display:flex; align-items:center; justify-content:center}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+  </style>
+</head>
+<body>
+  <header class="topbar" role="banner">
+    <div class="container nav" aria-label="Primary">
+      <a href="#message" class="brand" aria-label="Home: My Message">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1 data-i18n="brand_name">Oscar Mireles</h1>
+          <small data-i18n="brand_tag">FOR MAYOR • GALENA PARK</small>
+        </div>
+      </a>
+      <nav>
+        <div class="menu" id="menu">
+          <a href="#message" data-nav="message" aria-current="page" data-i18n="nav_message">My Message</a>
+          <a href="#issues"  data-nav="issues" data-i18n="nav_issues">The Issues</a>
+          <a href="#contact" data-nav="contact" data-i18n="nav_contact">Get in Touch</a>
+          <a href="#contact" class="btn cta" data-i18n="nav_volunteer">Volunteer</a>
+          <button class="btn lang-toggle" id="lang-toggle" data-i18n="btn_lang" aria-label="Toggle language">ES</button>
+        </div>
+        <button class="hamburger" id="hamburger" data-i18n-aria-label="aria_toggle_menu"><span></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1">
+    <!-- HERO / MESSAGE -->
+    <section id="message" class="container hero" aria-labelledby="message-title">
+      <div class="flag">
+        <span class="pill" data-i18n="pill_message">My Message</span>
+        <h2 id="message-title" data-editable data-i18n="hero_heading" contenteditable="false">A safer, fairer Galena Park where families can thrive</h2>
+        <p data-editable data-i18n="hero_body" contenteditable="false">I grew up here. I know our strengths and our struggles. As mayor, I will bring practical leadership focused on public safety, fiscal discipline, clean neighborhoods, and real transparency. We deserve a city hall that answers to you.</p>
+        <div class="hero-cta">
+          <a href="#issues" class="btn primary" data-i18n="cta_plan">See the plan</a>
+          <a href="#contact" class="btn secondary" data-i18n="cta_join">Join the team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ISSUES -->
+    <section id="issues" class="container" aria-labelledby="issues-title" hidden>
+      <h2 id="issues-title" class="sr-only" data-i18n="issues_title">The Issues</h2>
+      <div class="grid grid-3" id="issues-grid">
+        <article class="card" data-issue>
+          <h3 data-editable data-i18n="issue1_title" contenteditable="false">Public Safety & Trust</h3>
+          <p class="muted" data-editable data-i18n="issue1_body" contenteditable="false">Support our officers with training and tools while demanding accountability and timely reporting. Launch neighborhood watch partnerships and improve street lighting in high-incident areas.</p>
+          <ul class="muted">
+            <li data-editable data-i18n="issue1_b1" contenteditable="false">Quarterly public safety town halls</li>
+            <li data-editable data-i18n="issue1_b2" contenteditable="false">Independent review of critical incidents</li>
+            <li data-editable data-i18n="issue1_b3" contenteditable="false">Faster 311-style response tracking</li>
+          </ul>
+        </article>
+        <article class="card" data-issue>
+          <h3 data-editable data-i18n="issue2_title" contenteditable="false">Clean, Reliable City Services</h3>
+          <p class="muted" data-editable data-i18n="issue2_body" contenteditable="false">Fix the basics: water billing accuracy, trash pickup, drainage, and potholes. Publish service metrics so residents can see progress.</p>
+          <ul class="muted">
+            <li data-editable data-i18n="issue2_b1" contenteditable="false">Service dashboard updated weekly</li>
+            <li data-editable data-i18n="issue2_b2" contenteditable="false">48-hour pothole patch commitment</li>
+            <li data-editable data-i18n="issue2_b3" contenteditable="false">Drainage maintenance schedule online</li>
+          </ul>
+        </article>
+        <article class="card" data-issue>
+          <h3 data-editable data-i18n="issue3_title" contenteditable="false">Transparent & Responsible Budgeting</h3>
+          <p class="muted" data-editable data-i18n="issue3_body" contenteditable="false">End backroom deals. Publish readable budgets, vendor contracts, and salary changes. Focus dollars on safety, neighborhoods, and youth.</p>
+          <ul class="muted">
+            <li data-editable data-i18n="issue3_b1" contenteditable="false">Open checkbook and contract portal</li>
+            <li data-editable data-i18n="issue3_b2" contenteditable="false">Citizen budget workshop every spring</li>
+            <li data-editable data-i18n="issue3_b3" contenteditable="false">Independent audit summary mailed annually</li>
+          </ul>
+        </article>
+      </div>
+      <div class="center" style="margin-top:16px">
+        <button class="btn" id="add-issue" aria-label="Add a new issue card" data-i18n="btn_add_issue">Add an Issue</button>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container" aria-labelledby="contact-title" hidden>
+      <h2 id="contact-title" class="sr-only" data-i18n="contact_title">Get in Touch</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 data-editable data-i18n="contact_form_title" contenteditable="false">Volunteer or Send a Message</h3>
+          <p class="muted" data-i18n="contact_intro">We read every note. Share how you’d like to help or what we should know about your block.</p>
+          <form id="contact-form" novalidate>
+            <div class="row">
+              <div>
+                <label for="name" data-i18n="label_name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="Jane Doe" data-i18n-placeholder="ph_name" required />
+              </div>
+              <div>
+                <label for="email" data-i18n="label_email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" data-i18n-placeholder="ph_email" required />
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label for="phone" data-i18n="label_phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="(713) 555‑0123" data-i18n-placeholder="ph_phone" />
+              </div>
+              <div>
+                <label for="zip" data-i18n="label_zip">ZIP Code</label>
+                <input id="zip" name="zip" type="text" inputmode="numeric" pattern="\\d{5}" placeholder="77547" data-i18n-placeholder="ph_zip" />
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label for="interest" data-i18n="label_interest">I’m interested in</label>
+                <select id="interest" name="interest">
+                  <option value="volunteer" data-i18n="opt_volunteer">Volunteering</option>
+                  <option value="yard" data-i18n="opt_yardsign">Yard Sign</option>
+                  <option value="event" data-i18n="opt_event">Hosting an Event</option>
+                  <option value="question" data-i18n="opt_question">Asking a Question</option>
+                </select>
+              </div>
+              <div>
+                <label for="contactpref" data-i18n="label_pref">Preferred Contact</label>
+                <select id="contactpref" name="contactpref">
+                  <option data-i18n="opt_email">Email</option>
+                  <option data-i18n="opt_phone">Phone</option>
+                  <option data-i18n="opt_text">Text</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="userMessage" data-i18n="label_message">Your Message</label>
+              <textarea id="userMessage" name="message" placeholder="Tell us what’s on your mind…" data-i18n-placeholder="ph_message" maxlength="1500"></textarea>
+              <div class="note"><span id="char-count">0</span>/1500</div>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" id="newsletter" name="newsletter" /> <span data-i18n="label_newsletter">Sign me up for updates</span>
+              </label>
+            </div>
+            <div class="row">
+              <button class="btn primary" type="submit" data-i18n="btn_send">Send</button>
+              <button class="btn" type="reset" data-i18n="btn_reset">Reset</button>
+            </div>
+            <p class="note" id="form-note" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3 data-i18n="hq_title">Campaign Headquarters</h3>
+          <p class="muted" data-editable contenteditable="false"><strong>Electriqo LLC</strong><br>2220 4th St, Galena Park, TX 77547<br>346.222.0281<br>info@electriqo.pro</p>
+          <div class="divider"></div>
+          <h3 data-i18n="support_title">Support the Campaign</h3>
+          <p class="muted" data-i18n="support_text">Online donations and mailing address info go here.</p>
+          <div class="row">
+            <a class="btn primary" href="#" id="donate-btn" data-i18n="btn_donate">Donate</a>
+            <a class="btn" href="#" id="events-btn" data-i18n="btn_events">Upcoming Events</a>
+          </div>
+          <p class="note" data-i18n="donation_note">Donations are not tax-deductible. By donating, you certify you are a U.S. citizen or lawful permanent resident and this contribution is from your own funds.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="divider"></div>
+      <p class="fineprint"><span data-i18n="paid_for_by">Pol. ad paid for by Friends of Oscar Mireles.</span> <span data-editable contenteditable="false">P.O. Box 123, Galena Park, TX 77547</span>.</p>
+      <p class="fineprint">© <span id="year"></span> <span data-i18n="rights">Friends of Oscar Mireles. All rights reserved.</span></p>
+    </div>
+  </footer>
+
+  <!-- Edit Toolbar -->
+  <div class="edit-toolbar" aria-label="Editing controls">
+    <button class="btn" id="toggle-edit" aria-pressed="false" data-i18n="btn_edit">✎ Edit Mode</button>
+    <button class="btn" id="save-edit" title="Save content" hidden data-i18n="btn_save">Save</button>
+    <button class="btn" id="reset-edit" title="Reset to defaults" hidden data-i18n="btn_restore">Reset</button>
+  </div>
+
+  <script>
+    (function(){
+      const sections = ["message","issues","contact"]; 
+      const app = document.getElementById('app');
+      const yearEl = document.getElementById('year');
+      const menu = document.getElementById('menu');
+      const hamburger = document.getElementById('hamburger');
+      const charCount = document.getElementById('char-count');
+      const form = document.getElementById('contact-form');
+      const formNote = document.getElementById('form-note');
+      const addIssueBtn = document.getElementById('add-issue');
+      const issuesGrid = document.getElementById('issues-grid');
+      const langBtn = document.getElementById('lang-toggle');
+
+      // Year
+      yearEl.textContent = new Date().getFullYear();
+
+      // Mobile menu
+      const mq = window.matchMedia('(max-width: 800px)');
+      function applyMenuLayout(){
+        if(mq.matches){
+          hamburger.style.display='inline-flex';
+          menu.style.display='none';
+        } else {
+          hamburger.style.display='none';
+          menu.style.display='flex';
+        }
+      }
+      applyMenuLayout(); mq.addEventListener('change', applyMenuLayout);
+      hamburger.addEventListener('click', ()=>{
+        const open = menu.style.display==='flex';
+        menu.style.display = open ? 'none' : 'flex';
+      });
+
+      // SPA-like navigation
+      function show(id){
+        sections.forEach(sec=>{
+          const el = document.getElementById(sec);
+          const active = sec===id;
+          el.hidden = !active;
+          const navLink = document.querySelector(`[data-nav="${sec}"]`);
+          if(navLink){ navLink.setAttribute('aria-current', active ? 'page' : 'false'); }
+        });
+        app.focus({preventScroll:true});
+      }
+      function route(){
+        const hash = (location.hash || '#message').replace('#','');
+        if(!sections.includes(hash)) location.hash = '#message';
+        show(hash);
+      }
+      window.addEventListener('hashchange', route);
+      route();
+
+      // === i18n ===
+      const LANG_KEY = 'campaign-lang';
+      const STORAGE_PREFIX = 'campaign-site-v1-'; // saved content per language
+      let lang = localStorage.getItem(LANG_KEY) || 'en';
+
+      const translations = {
+        en: {
+          title: 'Oscar Mireles for Mayor – Galena Park 1st',
+          brand_name: 'Oscar Mireles',
+          brand_tag: 'FOR MAYOR • GALENA PARK',
+          nav_message: 'My Message', nav_issues: 'The Issues', nav_contact: 'Get in Touch', nav_volunteer: 'Volunteer',
+          btn_lang: 'ES', aria_toggle_menu: 'Toggle menu',
+          pill_message: 'My Message',
+          hero_heading: 'A safer, fairer Galena Park where families can thrive',
+          hero_body: 'I grew up here. I know our strengths and our struggles. As mayor, I will bring practical leadership focused on public safety, fiscal discipline, clean neighborhoods, and real transparency. We deserve a city hall that answers to you.',
+          cta_plan: 'See the plan', cta_join: 'Join the team',
+          issues_title: 'The Issues',
+          issue1_title: 'Public Safety & Trust',
+          issue1_body: 'Support our officers with training and tools while demanding accountability and timely reporting. Launch neighborhood watch partnerships and improve street lighting in high-incident areas.',
+          issue1_b1: 'Quarterly public safety town halls', issue1_b2: 'Independent review of critical incidents', issue1_b3: 'Faster 311-style response tracking',
+          issue2_title: 'Clean, Reliable City Services',
+          issue2_body: 'Fix the basics: water billing accuracy, trash pickup, drainage, and potholes. Publish service metrics so residents can see progress.',
+          issue2_b1: 'Service dashboard updated weekly', issue2_b2: '48-hour pothole patch commitment', issue2_b3: 'Drainage maintenance schedule online',
+          issue3_title: 'Transparent & Responsible Budgeting',
+          issue3_body: 'End backroom deals. Publish readable budgets, vendor contracts, and salary changes. Focus dollars on safety, neighborhoods, and youth.',
+          issue3_b1: 'Open checkbook and contract portal', issue3_b2: 'Citizen budget workshop every spring', issue3_b3: 'Independent audit summary mailed annually',
+          btn_add_issue: 'Add an Issue',
+          contact_title: 'Get in Touch',
+          contact_form_title: 'Volunteer or Send a Message',
+          contact_intro: 'We read every note. Share how you’d like to help or what we should know about your block.',
+          label_name: 'Full Name', ph_name: 'Jane Doe',
+          label_email: 'Email', ph_email: 'you@example.com',
+          label_phone: 'Phone', ph_phone: '(713) 555‑0123',
+          label_zip: 'ZIP Code', ph_zip: '77547',
+          label_interest: 'I’m interested in',
+          opt_volunteer: 'Volunteering', opt_yardsign: 'Yard Sign', opt_event: 'Hosting an Event', opt_question: 'Asking a Question',
+          label_pref: 'Preferred Contact', opt_email: 'Email', opt_phone: 'Phone', opt_text: 'Text',
+          label_message: 'Your Message', ph_message: 'Tell us what’s on your mind…',
+          label_newsletter: 'Sign me up for updates',
+          btn_send: 'Send', btn_reset: 'Reset',
+          hq_title: 'Campaign Headquarters',
+          support_title: 'Support the Campaign',
+          support_text: 'Online donations and mailing address info go here.',
+          btn_donate: 'Donate', btn_events: 'Upcoming Events',
+          donation_note: 'Donations are not tax-deductible. By donating, you certify you are a U.S. citizen or lawful permanent resident and this contribution is from your own funds.',
+          paid_for_by: 'Pol. ad paid for by Friends of Oscar Mireles.', rights: 'Friends of Oscar Mireles. All rights reserved.',
+          btn_edit: '✎ Edit Mode', btn_save:'Save', btn_restore:'Reset',
+          msg_need_name:'Please enter your name.', msg_need_email:'Please enter a valid email.', msg_thanks:'Thanks for reaching out. We\'ll be in touch soon.', msg_cleared:'Form cleared.', msg_saved:'Saved.'
+        },
+        es: {
+          title: 'Oscar Mireles para Alcalde – Galena Park 1.º',
+          brand_name: 'Oscar Mireles',
+          brand_tag: 'PARA ALCALDE • GALENA PARK',
+          nav_message: 'Mi Mensaje', nav_issues: 'Los Temas', nav_contact: 'Contacto', nav_volunteer: 'Voluntariado',
+          btn_lang: 'EN', aria_toggle_menu: 'Mostrar u ocultar menú',
+          pill_message: 'Mi Mensaje',
+          hero_heading: 'Una Galena Park más segura y justa donde las familias prosperen',
+          hero_body: 'Crecí aquí. Conozco nuestras fortalezas y también nuestros retos. Como alcalde, brindaré un liderazgo práctico enfocado en seguridad pública, disciplina fiscal, vecindarios limpios y verdadera transparencia. Merecemos un Ayuntamiento que te rinda cuentas.',
+          cta_plan: 'Ver el plan', cta_join: 'Únete al equipo',
+          issues_title: 'Los Temas',
+          issue1_title: 'Seguridad Pública y Confianza',
+          issue1_body: 'Apoyar a nuestros oficiales con capacitación y herramientas exigiendo a la vez rendición de cuentas y reportes oportunos. Impulsar vecindarios vigilantes y mejorar el alumbrado en zonas de mayor incidencia.',
+          issue1_b1: 'Asambleas trimestrales de seguridad pública', issue1_b2: 'Revisión independiente de incidentes críticos', issue1_b3: 'Seguimiento de reportes tipo 311 más ágil',
+          issue2_title: 'Servicios Municipales Confiables',
+          issue2_body: 'Arreglar lo básico: precisión en facturación de agua, recolección de basura, drenaje y baches. Publicar métricas de servicio para que los vecinos vean avances.',
+          issue2_b1: 'Tablero de servicio actualizado semanalmente', issue2_b2: 'Compromiso de bacheo en 48 horas', issue2_b3: 'Calendario de mantenimiento de drenaje en línea',
+          issue3_title: 'Presupuesto Transparente y Responsable',
+          issue3_body: 'Poner fin a los acuerdos a puerta cerrada. Publicar presupuestos claros, contratos con proveedores y cambios salariales. Enfocar los recursos en seguridad, vecindarios y juventud.',
+          issue3_b1: 'Portal de chequera y contratos abiertos', issue3_b2: 'Taller ciudadano de presupuesto cada primavera', issue3_b3: 'Resumen de auditoría independiente enviado cada año',
+          btn_add_issue: 'Agregar Tema',
+          contact_title: 'Contacto',
+          contact_form_title: 'Haz voluntariado o envía un mensaje',
+          contact_intro: 'Leemos cada mensaje. Cuéntanos cómo quieres ayudar o qué debemos saber de tu cuadra.',
+          label_name: 'Nombre completo', ph_name: 'Juana Pérez',
+          label_email: 'Correo electrónico', ph_email: 'tu@ejemplo.com',
+          label_phone: 'Teléfono', ph_phone: '(713) 555‑0123',
+          label_zip: 'Código postal', ph_zip: '77547',
+          label_interest: 'Me interesa',
+          opt_volunteer: 'Hacer voluntariado', opt_yardsign: 'Letrero para el patio', opt_event: 'Organizar un evento', opt_question: 'Hacer una pregunta',
+          label_pref: 'Medio de contacto preferido', opt_email: 'Correo', opt_phone: 'Teléfono', opt_text: 'Mensaje de texto',
+          label_message: 'Tu mensaje', ph_message: 'Cuéntanos qué tienes en mente…',
+          label_newsletter: 'Quiero recibir novedades',
+          btn_send: 'Enviar', btn_reset: 'Limpiar',
+          hq_title: 'Oficina de Campaña',
+          support_title: 'Apoyar la Campaña',
+          support_text: 'Aquí van los enlaces de donaciones en línea y la dirección postal.',
+          btn_donate: 'Donar', btn_events: 'Próximos eventos',
+          donation_note: 'Las donaciones no son deducibles de impuestos. Al donar, certificas que eres ciudadano estadounidense o residente permanente y que esta contribución proviene de tus propios fondos.',
+          paid_for_by: 'Anuncio político pagado por Amigos de Oscar Mireles.', rights: 'Amigos de Oscar Mireles. Todos los derechos reservados.',
+          btn_edit: '✎ Modo de edición', btn_save:'Guardar', btn_restore:'Restablecer',
+          msg_need_name:'Escribe tu nombre, por favor.', msg_need_email:'Ingresa un correo válido, por favor.', msg_thanks:'Gracias por escribir. Nos pondremos en contacto pronto.', msg_cleared:'Formulario limpiado.', msg_saved:'Guardado.'
+        }
+      };
+
+      function t(key){ return (translations[lang] && translations[lang][key]) || key; }
+
+      function translateDom(){
+        // document language and title
+        document.documentElement.setAttribute('lang', lang);
+        document.title = t('title');
+
+        // simple text nodes
+        document.querySelectorAll('[data-i18n]').forEach(el=>{
+          const key = el.getAttribute('data-i18n');
+          if(!key) return;
+          if(el.tagName.toLowerCase()==='input' || el.tagName.toLowerCase()==='textarea') return; // handled via placeholder attrs
+          el.textContent = t(key);
+        });
+        // attribute-based
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+          const key = el.getAttribute('data-i18n-placeholder');
+          el.setAttribute('placeholder', t(key));
+        });
+        document.querySelectorAll('[data-i18n-aria-label]').forEach(el=>{
+          const key = el.getAttribute('data-i18n-aria-label');
+          el.setAttribute('aria-label', t(key));
+        });
+      }
+
+      // Edit mode & persistence per language
+      const toggleBtn = document.getElementById('toggle-edit');
+      const saveBtn = document.getElementById('save-edit');
+      const resetBtn = document.getElementById('reset-edit');
+      const EDITABLE = '[data-editable]';
+
+      function storageKey(){ return STORAGE_PREFIX + lang; }
+
+      function setEditable(on){
+        document.body.classList.toggle('edit-on', on);
+        document.querySelectorAll(EDITABLE).forEach(el=>{ el.contentEditable = String(on); });
+        saveBtn.hidden = !on; resetBtn.hidden = !on;
+        toggleBtn.setAttribute('aria-pressed', String(on));
+      }
+
+      toggleBtn.addEventListener('click', ()=>{
+        const on = !document.body.classList.contains('edit-on');
+        setEditable(on);
+      });
+
+      saveBtn.addEventListener('click', saveState);
+      resetBtn.addEventListener('click', ()=>{
+        localStorage.removeItem(storageKey());
+        // restore defaults for current language
+        translateDom();
+        inform(t('msg_saved'));
+      });
+
+      function serialize(){
+        const data = {sections:{}};
+        sections.forEach(id=>{
+          const sec = document.getElementById(id);
+          data.sections[id] = Array.from(sec.querySelectorAll(EDITABLE)).map(n=>({path: getPath(n), html:n.innerHTML}))
+        });
+        data.issuesHTML = issuesGrid.innerHTML;
+        return data;
+      }
+      function saveState(){
+        const data = serialize();
+        localStorage.setItem(storageKey(), JSON.stringify(data));
+        inform(t('msg_saved'));
+      }
+      function loadState(){
+        const raw = localStorage.getItem(storageKey());
+        if(!raw){ translateDom(); return; }
+        try{
+          const data = JSON.parse(raw);
+          if(data.issuesHTML){ issuesGrid.innerHTML = data.issuesHTML; }
+          Object.entries(data.sections||{}).forEach(([id, items])=>{
+            items.forEach(({path, html})=>{
+              const node = queryPath(path);
+              if(node) node.innerHTML = html;
+            });
+          });
+        }catch(err){ console.warn('Failed to load saved state', err); translateDom(); }
+      }
+
+      function getPath(el){
+        const stack=[]; let node=el;
+        while(node && node !== document.body){
+          const index = Array.from(node.parentNode.children).indexOf(node);
+          stack.unshift(`${node.tagName.toLowerCase()}:nth-child(${index+1})`);
+          node = node.parentNode;
+        }
+        return stack.join('>');
+      }
+      function queryPath(path){
+        try{ return document.querySelector(path); }catch{ return null; }
+      }
+
+      // Contact form behavior
+      const ta = document.getElementById('userMessage');
+      ta.addEventListener('input', ()=>{ charCount.textContent = ta.value.length; });
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        const emailValid = /.+@.+\..+/.test(data.email || '');
+        if(!data.name){ return inform(t('msg_need_name')); }
+        if(!emailValid){ return inform(t('msg_need_email')); }
+        inform(t('msg_thanks'));
+        console.log('Contact form submission', data);
+        form.reset(); charCount.textContent = '0';
+      });
+      form.addEventListener('reset', ()=>{ inform(t('msg_cleared')); charCount.textContent = '0'; });
+      function inform(text){
+        formNote.textContent = text;
+        setTimeout(()=>{ formNote.textContent=''; }, 4000);
+      }
+
+      // Add Issue cards (language-aware defaults)
+      addIssueBtn.addEventListener('click', ()=>{
+        const card = document.createElement('article');
+        card.className='card'; card.setAttribute('data-issue','');
+        const defaults = {
+          en: {title:'New Issue', body:'Describe the problem and your solution in a few sentences.', b1:'Key action #1', b2:'Key action #2'},
+          es: {title:'Nuevo tema', body:'Describe el problema y tu solución en pocas oraciones.', b1:'Acción clave #1', b2:'Acción clave #2'}
+        }[lang];
+        card.innerHTML = `
+          <h3 data-editable contenteditable="${document.body.classList.contains('edit-on')}">${defaults.title}</h3>
+          <p class="muted" data-editable contenteditable="${document.body.classList.contains('edit-on')}">${defaults.body}</p>
+          <ul class="muted">
+            <li data-editable contenteditable="${document.body.classList.contains('edit-on')}">${defaults.b1}</li>
+            <li data-editable contenteditable="${document.body.classList.contains('edit-on')}">${defaults.b2}</li>
+          </ul>`;
+        issuesGrid.appendChild(card);
+        if(document.body.classList.contains('edit-on')) saveState();
+      });
+
+      // Language toggle behavior
+      function applyLanguage(){
+        translateDom();
+        // refresh placeholders and ARIA labels already handled in translateDom
+        // load saved edits for this language if any
+        loadState();
+        // update toggle button label to the opposite code
+        langBtn.textContent = t('btn_lang');
+      }
+      langBtn.addEventListener('click', ()=>{
+        lang = (lang === 'en') ? 'es' : 'en';
+        localStorage.setItem(LANG_KEY, lang);
+        applyLanguage();
+      });
+
+      // Init
+      applyLanguage();
+
+      // Keyboard: save with Ctrl/Cmd+S in edit mode
+      document.addEventListener('keydown', (e)=>{
+        if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='s'){
+          if(document.body.classList.contains('edit-on')){
+            e.preventDefault();
+            saveState();
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
