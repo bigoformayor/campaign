@@ -1,13 +1,14 @@
 :root {
-  --pink: #E84D79;
-  --pink-600: #d43c69;
+  --pink: #C81E5A;        /* darker, richer */
+  --pink-600: #A31645;     /* deeper accent */
   --navy: #0b2545;
   --offwhite: #f9f9f7;
   --ink: #10212b;
   --muted: #5b6b76;
   --card: #ffffff;
-  --bg: #fff5f8;
+  --bg: #fff4f7;
 }
+
 :root[data-theme="dark"] {
   --bg: #0e1113;
   --card: #14181b;
@@ -117,3 +118,61 @@ body {
 
 .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
 .skip-link:focus { position: static; width: auto; height: auto; background: var(--navy); color: var(--offwhite); padding: .5rem; }
+
+.btn { 
+  background: linear-gradient(180deg, color-mix(in srgb, var(--pink), white 8%), var(--pink));
+  border: 2px solid var(--pink-600);
+  box-shadow: 0 6px 16px rgba(200, 30, 90, 0.25);
+}
+.btn:hover { filter: none; transform: translateY(-1px); }
+.section.alt { background: color-mix(in srgb, var(--pink), white 88%); }
+
+/* Prevent any sideways scroll on small screens */
+html, body { overflow-x: hidden; }
+
+/* Make containers obey viewport width strictly */
+.container { width: min(1100px, 92vw); }
+
+/* Let header content wrap on small screens */
+.header-inner { flex-wrap: wrap; }
+@media (max-width: 720px){
+  .site-header { padding: .25rem 0; }
+  .header-inner { justify-content: center; gap: .5rem; }
+  .brand { order: 1; }
+  .main-nav { order: 3; width: 100%; display: flex; justify-content: center; flex-wrap: wrap; gap: .25rem; }
+  .right-tools { order: 2; display: flex; align-items: center; gap: .5rem; }
+}
+
+/* Hero: hide background bleed and center stack tighter */
+.hero { 
+  overflow: hidden;                    /* stops visual bleed to the right */
+  padding: 4rem 0 2.5rem; 
+  background-size: 120% 100%, 120% 100%;
+  background-position: center top, center top;
+}
+.hero-stack { padding: 0 1rem; }       /* avoid text hugging the edge */
+
+/* Bigger, centered logo without pushing width */
+.logo-hero { 
+  height: clamp(110px, 24vw, 160px);
+}
+
+/* Impact heading stays readable and contained */
+.impact {
+  font-size: clamp(2rem, 7vw, 3.6rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+/* Tools and socials don’t force overflow */
+.socials, .footer-socials { flex-wrap: wrap; }
+.social { width: 40px; height: 40px; }   /* slightly larger tap target */
+.social svg { width: 22px; height: 22px; }
+
+/* Posts grid already collapses; tighten on small screens */
+@media (max-width: 480px){
+  .tools { flex-wrap: wrap; }
+  .tools input, .tools select { width: 100%; }
+  .cta-row { gap: .5rem; }
+}
+
