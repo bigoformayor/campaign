@@ -132,10 +132,42 @@
   }
 
   function init(){
-    $('#year').textContent = new Date().getFullYear();
+  // Footer year
+  $('#year').textContent = new Date().getFullYear();
 
-    
-      // Mobile menu toggle
+  // Apply current language strings on first paint
+  applyI18n();
+
+  // Language toggle (safe if the button is missing)
+  const langBtn = document.getElementById('langToggle');
+  if (langBtn) {
+    langBtn.addEventListener('click', () => {
+      state.lang = state.lang === 'en' ? 'es' : 'en';
+      localStorage.setItem('gp_lang', state.lang);
+      applyI18n();
+      renderAll();
+    });
+  }
+
+  // Smooth-scroll for in-page nav
+  $$('.main-nav a').forEach(a => a.addEventListener('click', e => {
+    const href = a.getAttribute('href') || '';
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const target = $(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.setAttribute('tabindex','-1');
+        target.focus({ preventScroll:true });
+      }
+    }
+  }));
+
+  // Filters for News & Events (safe if inputs are missing)
+  $('#searchInput')?.addEventListener('input', renderPosts);
+  $('#filterSelect')?.addEventListener('change', renderPosts);
+
+  // Mobile menu toggle
   const nav = document.getElementById('mainNav');
   const navToggle = document.getElementById('navToggle');
   if (nav && navToggle) {
@@ -144,8 +176,7 @@
       nav.setAttribute('data-open', String(!open));
       navToggle.setAttribute('aria-expanded', String(!open));
     });
-
-    // Close the menu after clicking a link on mobile
+    // Close after tapping a link on mobile
     Array.from(nav.querySelectorAll('a')).forEach(a => {
       a.addEventListener('click', () => {
         if (window.matchMedia('(max-width: 720px)').matches) {
@@ -155,35 +186,19 @@
       });
     });
   }
-    });
 
-    applyI18n();
-    $('#langToggle').addEventListener('click', () => {
-      state.lang = state.lang === 'en' ? 'es' : 'en';
-      localStorage.setItem('gp_lang', state.lang);
-      applyI18n();
-      renderAll();
-    });
+  // Load content.json -> renders About + News
+  loadContent();
 
-    $$('.main-nav a').forEach(a => a.addEventListener('click', e => {
-      const href = a.getAttribute('href');
-      if(href.startsWith('#')){
-        e.preventDefault();
-        const target = $(href);
-        if(target){ target.scrollIntoView({ behavior: 'smooth', block: 'start' }); target.setAttribute('tabindex','-1'); target.focus({ preventScroll:true }); }
-      }
-    }));
+  // Header behavior
+  initHeaderShrink();
 
-    $('#searchInput').addEventListener('input', renderPosts);
-    $('#filterSelect').addEventListener('change', renderPosts);
-
-    loadContent();
-    initHeaderShrink();
-
-    if('serviceWorker' in navigator){
-      navigator.serviceWorker.register('sw.js').catch(()=>{});
-    }
+  // SW for caching (okay to fail silently)
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
   }
+}
+
 
   function renderAll(){
     applyI18n();
