@@ -1,4 +1,4 @@
-const CACHE = 'gp1st-v3';
+const CACHE = 'gp1st-v4';
 const ASSETS = [
   '.', 'index.html', 'styles.css', 'app.js', 'content.json', 'assets/favicon.svg', 'assets/gp1.png'
 ];
