@@ -175,4 +175,41 @@ html, body { overflow-x: hidden; }
   .tools input, .tools select { width: 100%; }
   .cta-row { gap: .5rem; }
 }
+/* Mobile header cleanup and menu behavior */
+@media (max-width: 720px){
+  /* Hide only the header logo image, keep the site name text */
+  .brand .logo { display: none; }
+
+  /* Let header items wrap cleanly */
+  .header-inner { flex-wrap: wrap; justify-content: center; gap: .5rem; }
+
+  /* Show the Menu button on mobile */
+  .chip.menu { display: inline-flex; }
+
+  /* Make the nav collapse by default on mobile */
+  .main-nav {
+    width: 100%;
+    display: none;                 /* collapsed */
+    flex-direction: column;
+    align-items: center;
+    gap: .25rem;
+    padding: .25rem 0;
+    background: var(--card);
+    border: 1px solid color-mix(in srgb, var(--navy), transparent 80%);
+    border-radius: .5rem;
+  }
+  .main-nav a {
+    padding: .5rem .75rem;
+    width: 100%;
+    text-align: center;
+  }
+  /* When opened via data attribute */
+  .main-nav[data-open="true"] { display: flex; }
+}
+
+/* Desktop: hide the Menu button, keep horizontal nav */
+@media (min-width: 721px){
+  .chip.menu { display: none; }
+  .main-nav { display: block; } /* your existing desktop layout */
+}
 
