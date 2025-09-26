@@ -1,7 +1,9 @@
-const CACHE = 'gp1st-v5';
+const CACHE = 'gp1st-v7';
 const ASSETS = [
   '.', 'index.html', 'styles.css', 'app.js', 'content.json', 'assets/gp1.png',
-  'assets/carousel/manifest.json', 'assets/carousel/1.jpg','assets/carousel/2.jpg','assets/carousel/3.jpg'
+  'assets/carousel/manifest.json',
+  'assets/carousel/1.jpg','assets/carousel/2.jpg','assets/carousel/3.jpg',
+  'assets/carousel/4.jpg','assets/carousel/5.jpg','assets/carousel/6.jpg'
 ];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));
