@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galena Park 1st | Community Forum</title>
+  <meta name="description" content="A community forum for Galena Park. News, events, and the Galena Park 1st movement." />
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Use the GP1 logo as favicon/tab icon -->
+  <link rel="icon" href="assets/gp1.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/gp1.png" />
+  <meta property="og:title" content="Galena Park 1st | Community Forum" />
+  <meta property="og:description" content="News, events, and the story behind Galena Park 1st." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/gp1.png" />
+  <meta name="theme-color" content="#f18dca" />
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Galena Park 1st home">
+        <img src="assets/gp1.png" alt="Galena Park 1st logo" class="logo" />
+        <span>Galena Park 1st</span>
+      </a>
+      <nav id="mainNav" class="main-nav" aria-label="Primary" data-open="false">
+        <a href="#about" data-i18n="nav.about">About Us</a>
+        <a href="#news" data-i18n="nav.news">News &amp; Events</a>
+        <a href="#contact" data-i18n="nav.contact">Get in Touch</a>
+      </nav>
+      <button id="navToggle" class="chip menu" aria-label="Toggle menu" aria-controls="mainNav" aria-expanded="false">Menu</button>
+      <div class="right-tools">
+        <div class="socials" aria-label="Social links">
+          <a href="https://www.facebook.com/groups/1094123931788158/" target="_blank" rel="noopener" aria-label="Facebook group" class="social fb" title="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.8h2.6l-.4 3h-2.2v7A10 10 0 0 0 22 12"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@galenapark1st" target="_blank" rel="noopener" aria-label="TikTok" class="social tk" title="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12.3 2h3.3c.2 1 .7 2 1.5 2.7a6 6 0 0 0 2.7 1v3.3c-1.2.1-2.3-.2-3.3-.8v6.8a6 6 0 1 1-9-5.4v3.5a3 3 0 0 0 1.4 5.7c.7 0 1.3-.2 1.9-.6a3 3 0 0 0 1.4-2.6V2Z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="toggles">
+          <button id="langToggle" class="chip" aria-label="Toggle language">ES</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero hero-focus">
+      <div class="container hero-stack">
+        <img src="assets/gp1.png" alt="Galena Park 1st logo" class="logo-hero" />
+        <h1 class="impact" data-i18n="hero.help">We're here to help!</h1>
+        <p class="lead hero-lead" data-i18n="hero.subtitle">Neighbors first. Galena Park first.</p>
+        <div class="cta-row">
+          <a href="#contact" class="btn" data-i18n="hero.ctaHelp">Get help</a>
+          <a href="#news" class="btn btn-outline" data-i18n="hero.ctaNews">See the latest</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thin accent line (replaces old announce bar) -->
+    <div class="accent-line" aria-hidden="true"></div>
+
+    <!-- IMAGE CAROUSEL -->
+    <section id="gallery" class="carousel-section">
+      <div class="container">
+        <div class="carousel" aria-label="Community photos">
+          <button class="car-btn prev" aria-label="Previous slide">&#10094;</button>
+          <div class="car-viewport">
+            <ul class="car-track" id="carTrack" role="group" aria-roledescription="carousel"></ul>
+          </div>
+          <button class="car-btn next" aria-label="Next slide">&#10095;</button>
+        </div>
+        <div class="car-dots" id="carDots" role="tablist" aria-label="Slide selectors"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container two-col">
+        <div>
+          <h2 data-i18n="about.title">About Galena Park 1st</h2>
+          <div id="aboutContent" class="prose"></div>
+        </div>
+        <aside class="card" aria-labelledby="driversTitle">
+          <h3 id="driversTitle" data-i18n="about.driversTitle">Drivers and goals</h3>
+          <ul id="driversList" class="checklist"></ul>
+          <p class="muted" data-i18n="about.note">This site is a community forum. It is not a campaign site.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="news" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="news.title">News &amp; Events</h2>
+          <div class="tools">
+            <input id="searchInput" type="search" placeholder="Search..." aria-label="Search news" />
+            <select id="filterSelect" aria-label="Filter posts">
+              <option value="all" data-i18n="news.filters.all">All</option>
+              <option value="news" data-i18n="news.filters.news">News</option>
+              <option value="event" data-i18n="news.filters.events">Events</option>
+              <option value="upcoming" data-i18n="news.filters.upcoming">Upcoming events</option>
+              <option value="past" data-i18n="news.filters.past">Past events</option>
+            </select>
+          </div>
+        </div>
+        <div id="postList" class="grid"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container two-col">
+        <div>
+          <h2 data-i18n="contact.title">Get in Touch</h2>
+          <p class="lead"><strong data-i18n="contact.phoneLabel">Phone</strong>: <a href="tel:+13462916021">(346) 291-6021</a></p>
+          <p data-i18n="contact.desc">Use the form and we will reply as soon as possible.</p>
+
+          <form action="https://formspree.io/f/mwpqgqlr" method="POST" class="contact-form">
+            <label>
+              <span data-i18n="contact.email">Your email:</span>
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              <span data-i18n="contact.message">Your message:</span>
+              <textarea name="message" rows="6" required></textarea>
+            </label>
+            <button type="submit" class="btn" data-i18n="contact.send">Send</button>
+          </form>
+
+          <p class="muted" id="formNote" data-i18n="contact.note">Powered by Formspree. No account needed to message us.</p>
+        </div>
+        <aside class="card" aria-labelledby="visitTitle">
+          <h3 id="visitTitle" data-i18n="contact.visit">Visit</h3>
+          <p>Galena Park, Texas</p>
+          <p class="muted" data-i18n="contact.hours">Community hours vary by event. Check News &amp; Events.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <small>&copy; <span id="year"></span> Galena Park 1st</small>
+      </div>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/groups/1094123931788158/" target="_blank" rel="noopener" class="social fb" aria-label="Facebook group">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.8h2.6l-.4 3h-2.2v7A10 10 0 0 0 22 12"/>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@galenapark1st" target="_blank" rel="noopener" class="social tk" aria-label="TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12.3 2h3.3c.2 1 .7 2 1.5 2.7a6 6 0 0 0 2.7 1v3.3c-1.2.1-2.3-.2-3.3-.8v6.8a6 6 0 1 1-9-5.4v3.5a3 3 0 0 0 1.4 5.7c.7 0 1.3-.2 1.9-.6a3 3 0 0 0 1.4-2.6V2Z"/>
+          </svg>
+        </a>
+      </div>
+      <a class="muted" href="admin.html">Admin</a>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

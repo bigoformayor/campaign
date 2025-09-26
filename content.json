@@ -1,0 +1,76 @@
+{
+  "about": {
+    "en": "**Galena Park 1st** is about putting families at the heart of our community. We want Galena Park to be the kind of place where parents feel supported, kids have safe spaces to grow, and seniors are respected. Our focus is on building clean parks, reliable services, and open communication between neighbors and city leadership.\n\nThis site is where we share updates, highlight progress, and invite everyone to take part in shaping a better home for our families.",
+    "es": "**Galena Park 1st** se trata de poner a las familias en el centro de nuestra comunidad. Queremos que Galena Park sea un lugar donde los padres se sientan apoyados, los niños tengan espacios seguros para crecer y los adultos mayores sean respetados. Nos enfocamos en parques limpios, servicios confiables y comunicación abierta entre vecinos y líderes de la ciudad.\n\nAquí compartimos avances, noticias y formas de participar para hacer de nuestra ciudad un mejor hogar para nuestras familias."
+  },
+  "drivers": {
+    "en": [
+      "Clean and safe public spaces that families actually use",
+      "Simple city services with clear response times",
+      "Transparency for budgets, contracts, and staffing",
+      "Youth programs that build skills, not just busywork",
+      "Respectful code enforcement with consistent rules"
+    ],
+    "es": [
+      "Espacios públicos limpios y seguros que las familias sí usan",
+      "Servicios municipales simples con tiempos de respuesta claros",
+      "Transparencia en presupuestos, contratos y personal",
+      "Programas para jóvenes que formen habilidades, no solo tareas",
+      "Aplicación del código con respeto y reglas consistentes"
+    ]
+  },
+  "posts": [
+    {
+      "id": "gpisd-teacher-salaries-2025",
+      "type": "news",
+      "date": "2025-07-11",
+      "tags": ["schools", "teachers"],
+      "link": "https://www.houstonchronicle.com/news/houston-texas/education/article/houston-starting-teacher-salary-increase-20357920.php",
+      "linkText": "Houston Chronicle",
+      "title": { "en": "Report: GPISD among highest starting teacher salaries in Houston area (2025–26)", "es": "Informe: GPISD entre los sueldos iniciales más altos para maestros en Houston (2025–26)" },
+      "body": {
+        "en": "A recent roundup notes Galena Park ISD is among Houston-area districts with the highest starting teacher pay for 2025–26, part of wider efforts to recruit and retain educators.",
+        "es": "Un recuento reciente señala que Galena Park ISD está entre los distritos con el sueldo inicial más alto para maestros en 2025–26, como parte de esfuerzos para atraer y retener educadores."
+      }
+    },
+    {
+      "id": "tea-restores-ratings-2025",
+      "type": "news",
+      "date": "2025-08-18",
+      "tags": ["schools", "ratings"],
+      "link": "https://www.northchannelstar.com/2025/08/tea-restores-school-ratings-marks-slight-progress-for-galena-park-isd/",
+      "linkText": "North Channel Star",
+      "title": { "en": "TEA restores school ratings; slight progress for GPISD", "es": "TEA restaura calificaciones; leve progreso para GPISD" },
+      "body": {
+        "en": "Local coverage highlights that state ratings were restored and shows modest improvement for Galena Park ISD.",
+        "es": "Cobertura local destaca que se restauraron las calificaciones estatales y muestra una mejora modesta para GPISD."
+      }
+    },
+    {
+      "id": "gpisd-board-officers-2025",
+      "type": "news",
+      "date": "2025-08-11",
+      "tags": ["schools", "board"],
+      "link": "https://www.galenaparkisd.com/district-info/news-archive/~board/gpisd-homepage-news/post/meet-the-2025-2026-galena-park-isd-board-of-trustees-officers",
+      "linkText": "GPISD News",
+      "title": { "en": "GPISD names 2025–26 Board of Trustees officers", "es": "GPISD nombra a la Mesa Directiva 2025–26" },
+      "body": {
+        "en": "At the August 11 meeting, trustees selected new officers for the 2025–26 school year.",
+        "es": "En la reunión del 11 de agosto, los consejeros eligieron a los nuevos oficiales para el ciclo 2025–26."
+      }
+    },
+    {
+      "id": "city-calendar-link",
+      "type": "event",
+      "date": "2025-08-22",
+      "tags": ["city", "events"],
+      "link": "https://cityofgalenapark-tx.gov/Calendar.aspx",
+      "linkText": "City of Galena Park Calendar",
+      "title": { "en": "City events: check the official calendar", "es": "Eventos de la ciudad: consulta el calendario oficial" },
+      "body": {
+        "en": "See upcoming city events, meetings, and programs on the official calendar.",
+        "es": "Consulta los próximos eventos, reuniones y programas en el calendario oficial."
+      }
+    }
+  ]
+}

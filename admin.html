@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin — Galena Park 1st</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    main { padding: 2rem 0; }
+    textarea { width: 100%; min-height: 50vh; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .row { display: flex; gap: .75rem; flex-wrap: wrap; align-items: center; }
+  </style>
+</head>
+<body class="gordita">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">← Galena Park 1st</a>
+      <nav class="main-nav"></nav>
+      <div class="toggles"><button id="logout" class="chip">Logout</button></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Content editor</h1>
+    <p class="muted">Edit <code>content.json</code> below. Download your changes and commit the file to your repo to publish.</p>
+
+    <div class="row">
+      <button class="chip" id="pretty">Format JSON</button>
+      <button class="chip" id="validate">Validate</button>
+      <button class="btn" id="download">Download content.json</button>
+    </div>
+
+    <h3>content.json</h3>
+    <textarea id="editor" spellcheck="false" aria-label="Content JSON editor"></textarea>
+
+    <details class="card" style="margin-top:1rem;">
+      <summary>Quick add templates</summary>
+      <div style="padding-top:.5rem;">
+        <button class="chip" id="addNews">Add news</button>
+        <button class="chip" id="addEvent">Add event</button>
+      </div>
+    </details>
+  </main>
+
+  <script src="admin.js" defer></script>
+</body>
+</html>
